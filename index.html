@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
     <nav>
@@ -176,10 +177,27 @@
             <a href="#"><img src="./project/design/banner/005.jpg" alt=""></a>
             <a href="#"><img src="./project/design/banner/006.jpg" alt=""></a>
         </div>
+        <h1>detail design</h1>
+        <div class="detail">
+            <p>클릭하면 크게 볼 수 있어요!</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide de1"><a href="#"><img src="./project/design/detail/001.jpg" alt=""></a></div>
+                    <div class="swiper-slide de2"><a href="#"><img src="./project/design/detail/002.jpg" alt=""></a></div>
+                    <div class="swiper-slide de3"><a href="#"><img src="./project/design/detail/003.jpg" alt=""></a></div>
+                    <div class="swiper-slide de4"><a href="#"><img src="./project/design/detail/004.jpg" alt=""></a></div>
+                    <div class="swiper-slide de5"><a href="#"><img src="./project/design/detail/005.jpg" alt=""></a></div>
+                    <div class="swiper-slide de6"><a href="#"><img src="./project/design/detail/006.jpg" alt=""></a></div>
+                </div>
+            </div>
+            <div class="big_bg">
+                <div class="img"><img src="./project/design/detail/001.jpg" alt=""></div>
+            </div>
+        </div>
     </div>
     <script>
         const swiperSns = new Swiper('.sns .swiper',{
-            slidesPerView:4,
+            slidesPerView:2,
             spaceBetween:20,
             autoplay:{
                 delay:1,
@@ -187,7 +205,15 @@
             },
             loop:true,
             speed:8e3,
-            freemode: true
+            freemode: true,
+            breakpoints: {
+                800: {// 화면 너비가 800 이상일 때
+                    slidesPerView: 3, // 슬라이드 2개 보이기
+                },
+                1000: {
+                    slidesPerView: 4, // 슬라이드 2개 보이기
+                },
+            },
         })
 
         const swiperWeb = new Swiper('.web .swiper',{
@@ -198,6 +224,48 @@
                 prevEl: '.web .swiper-button-prev',
             },
         })
+
+        const swiperDetail = new Swiper('.detail .swiper',{
+            slidesPerView:2,
+            spaceBetween:20,
+            autoplay:{
+                delay:2000,
+                desableOnInteraction: false, 
+            },
+            loop:true,
+            breakpoints: {
+                800: {// 화면 너비가 800 이상일 때
+                    slidesPerView: 3, // 슬라이드 2개 보이기
+                },
+                1000: {
+                    slidesPerView: 4, // 슬라이드 2개 보이기
+                },
+            },
+        })
+
+        // big
+
+        const big_bg = document.querySelector('.big_bg')
+        const big_bg_img = document.querySelector('.big_bg img')
+        const detail_a = document.querySelectorAll('.detail .swiper-slide a img');
+        big_bg.style.display = 'none';
+        console.log(detail_a)
+
+        for(let detail of detail_a){
+            detail.addEventListener('click',(e)=>{
+                e.preventDefault();
+                big_bg.style.display = 'block';
+                big_bg.children[0].scrollTo(0,0)
+                big_bg_img.src = detail.src
+                document.body.style.overflow = 'hidden';
+            })
+        }
+
+        big_bg.addEventListener('click',()=>{
+            big_bg.style.display = 'none';
+            document.body.style.overflow = '';
+        })
+
     </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 body, html {scroll-behavior: smooth;}
-body > div {min-width:1200px; margin:0 auto;}
+body > div {min-width:400px; padding:0 15px; margin:0 auto;}
 h1 {
     font-family: "DM Serif Display", serif;
     font-size:10rem; font-weight:600; 
@@ -69,13 +69,13 @@ nav a:hover {color:rgb(255, 255, 159)}
 /*  */
 .project_intro {height:50vh;}
 .project {
-    padding:100px 0;
+    padding:100px 15px;
     background:linear-gradient(180deg, #301dfd, #b2bbff, #301dfd);
 }
 .project .app {}
 .project .app {}
 .project .app .container {
-    background:#fff; width:1400px;  margin:0 auto 100px; border-radius:20px; padding:30px 35px;
+    background:#fff; max-width:1400px;  margin:0 auto 100px; border-radius:20px; padding:30px 35px;
     display:flex;
 }
 .project .app .container .thum {width:70%;}
@@ -95,7 +95,7 @@ nav a:hover {color:rgb(255, 255, 159)}
     position:relative;
 }
 .project .web .swiper {
-    background:#fff; width:1400px;  margin:0 auto 100px; border-radius:20px; padding:30px 35px;
+    background:#fff; max-width:1400px;  margin:0 auto 100px; border-radius:20px; padding:30px 35px;
 }
 .project .web div[class^=swiper-button] {color:#fff; padding:50px;}
 .project .web .swiper-slide {display:flex;}
@@ -123,7 +123,7 @@ nav a:hover {color:rgb(255, 255, 159)}
 .project .sns .swiper .swiper-wrapper .swiper-slide img {width:100%;}
 .project .banner {
     padding:100px 0;
-    width:1400px; margin:0 auto;
+    max-width:1400px; margin:0 auto;
     text-align: center;
     display:grid;
     grid-template-columns:repeat(2, 1fr);
@@ -131,3 +131,43 @@ nav a:hover {color:rgb(255, 255, 159)}
 .project .banner a {}
 .project .banner a:nth-child(odd) {margin-right:5px;}
 .project .banner a img {width:100%;}
+/* detail */
+.project .detail {
+    padding:100px 0;
+    max-width:1400px; margin:0 auto;
+}
+.project .detail p {padding:0 0 10px;}
+.project .detail .swiper-slide a {
+    display:block;
+    height:500px; position:relative;
+    background-position: center top;
+}
+.project .detail .swiper-slide a::after {
+    content:''; display:block;
+    position:absolute; bottom:0;
+    width:100%; height:100px; z-index:900;
+    background:linear-gradient(360deg, #301dfd, transparent)
+}
+.project .detail .swiper-slide a img {width:100%;}
+/* big */
+.big_bg {
+    position:fixed;
+    background:rgba(0,0,0,0.3);
+    left:0; top:0; 
+    z-index:999;
+    width:100%; height:100vh;
+}
+.big_bg .img {
+    max-width:50vw; margin:3vh auto;
+    height:90vh; overflow-y:auto; overflow-x:hidden;
+    text-align: center;
+}
+.big_bg .img img {width:100%;}
+.big_bg .img::-webkit-scrollbar {
+	background:#333;
+    width:2px; height:10px;
+}
+/* 스크롤바 막대 꾸미기 */
+.big_bg .img::-webkit-scrollbar-thumb {
+	background:#fff;
+}

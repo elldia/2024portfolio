@@ -1,0 +1,24 @@
+@media screen and (max-width:1200px){
+    h1 {font-size:8rem;}
+    .visual .txt h1+p {top:0;}
+    .project .app .web_info a {margin-top:10px;}
+}
+@media screen and (max-width:800px){
+    h1 {font-size:5rem;}
+    .profile .txt {
+        grid-template-areas:
+        'a'
+        'b'
+        'c';
+    }
+    
+}
+@media screen and (max-width:600px){
+    h1 {font-size:3rem;}
+    .visual .txt .info {font-size:0.91rem;}
+    .profile .photo {display:none;}
+    .profile {height:max-content;}
+    .project_intro {height:max-content;}
+    .project .app .container {flex-flow:column;}
+    .project .web .swiper-slide {flex-flow:column;}
+}
