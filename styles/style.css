@@ -1,4 +1,5 @@
-body > * {min-width:1200px; margin:0 auto;}
+body, html {scroll-behavior: smooth;}
+body > div {min-width:1200px; margin:0 auto;}
 h1 {
     font-family: "DM Serif Display", serif;
     font-size:10rem; font-weight:600; 
@@ -6,7 +7,22 @@ h1 {
     text-transform: capitalize;
     text-align: center;
 }
+h1 span {color:rgb(255, 255, 159); font-family: "DM Serif Display", serif; font-weight:600; }
 /*  */
+nav {
+    position:fixed; z-index:999;
+    width:100px !important;
+    display:flex; flex-flow:column nowrap;
+    right:50px; bottom:50px;
+}
+nav::after {
+    content:''; display:inline-block;
+    width:2.5px; height:100px;
+    background:#fff;
+    position:absolute; right:-20px; top:8px;
+}
+nav a {color:#fff; margin-bottom:20px; text-align: right;}
+nav a:hover {color:rgb(255, 255, 159)}
 .bg {background:url(../images/bg.jpg) center 40%; background-size:cover;}
 .visual {height:100vh;}
 .visual .year { position:relative; top:30px; left:30px; font-size:1.5rem;}
@@ -56,6 +72,25 @@ h1 {
     padding:100px 0;
     background:linear-gradient(180deg, #301dfd, #b2bbff, #301dfd);
 }
+.project .app {}
+.project .app {}
+.project .app .container {
+    background:#fff; width:1400px;  margin:0 auto 100px; border-radius:20px; padding:30px 35px;
+    display:flex;
+}
+.project .app .container .thum {width:70%;}
+.project .app .container .thum img {width:100%;}
+.project .app .web_info {padding-left:20px;}
+.project .app .web_info * {color:#222; line-height:1.7;}
+.project .app .web_info h3 {font-weight:600; font-size:1.2rem; margin:0 0 20px;}
+.project .app .web_info em {font-weight:600;}
+.project .app .web_info a {
+    color:#fff; padding:10px 20px; margin-right:10px; border-radius: 20px;
+    background:linear-gradient(90deg, #555, #111, #555);
+    background-size:200%; background-position:right;
+    transition:all 1s; display:inline-block; margin-top:100px;
+}
+/*  */
 .project .web {
     position:relative;
 }
